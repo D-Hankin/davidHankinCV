@@ -1,0 +1,30 @@
+#contentExperience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 20px;
+    padding: 2%;
+    border-radius: 10px;
+    color: rgb(12,106,95);
+    background-color: rgb(249,131,46);
+}
+
+#leftSideDiv, #rightSideDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(12,106,95);
+    color: rgb(249,131,46);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+
+.experienceH2 {
+    border-bottom: 2px solid rgb(249,131,46);
+}
+
+.experienceLinks {
+    text-decoration: underline;
+    color: rgb(249,131,46);
+}

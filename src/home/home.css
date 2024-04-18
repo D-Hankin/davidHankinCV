@@ -1,0 +1,72 @@
+h2, h3 {
+    text-align: left;
+    width: 100%;
+}
+
+#contentHome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: rgb(38,105,149);
+    color: rgb(245,130,85);
+}
+
+#contentLeft {
+    max-width: 100%;
+    width: 60%;
+    margin-right: 3%;
+}
+
+p {
+    text-align: left;
+    max-width: 100%;
+}
+
+#imageDiv {
+    background-color: rgb(245,130,85);
+    border-radius: 20px;
+    width: 35%;
+    text-align: center;
+    padding: 7% 0 7% 0;
+    height: fit-content;
+}
+
+#profilePic {
+    width: 65%;
+    height: auto;
+    box-shadow: 0 0 10px black;
+}
+
+#strengthsList {
+  text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+    #profilePic {
+        max-width: 40%;
+        height: auto;
+    }
+    body {
+      font-size: 16px;
+    }
+    #contentLeft {
+        width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    #profilePic {
+        max-width: 100%;
+        height: auto;
+    }
+    body {
+      font-size: 14px;
+    }
+    #contentLeft {
+        width: 100%;
+    }
+  }

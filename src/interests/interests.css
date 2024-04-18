@@ -1,0 +1,28 @@
+#contentInterests {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: rgb(118,59,145);
+    color: rgb(227,189,136);
+}
+
+#interestsImgsDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.interestsImgs {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.interestsImgs:hover {
+    transform: scale(1.5);
+}

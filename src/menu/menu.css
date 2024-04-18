@@ -1,0 +1,82 @@
+#menuUl {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.liDiv {
+    flex: 1;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.menuLi {
+    width: 40%;
+}
+
+.arrowImg {
+    width: 30px;
+    height: 20px;
+}
+
+.liDiv:hover {
+    cursor: pointer;
+}
+
+#menuHome {
+    background-color: rgb(38,105,149);
+    color: rgb(245,130,85);
+}
+
+#menuHome:hover {
+    color: rgb(38,105,149);
+    background-color: rgb(245,130,85);
+}
+
+#menuInterests {
+    color: rgb(227,189,136);
+    background-color: rgb(118,59,145);
+}
+
+#menuInterests:hover {
+    color: rgb(118,59,145);
+    background-color: rgb(227,189,136);
+}
+
+#menuPortfolio {
+    color: rgb(209,193,223);
+    background-color: rgb(50,132,91);
+}
+
+#menuPortfolio:hover {
+    color: rgb(50,132,91);
+    background-color: rgb(209,193,223);
+}
+
+#menuExperience {
+    color: rgb(249,131,46);
+    background-color: rgb(12,106,95);
+}
+
+#menuExperience:hover {
+    color: rgb(12,106,95);
+    background-color: rgb(249,131,46);
+}
+
+#menuContact {
+    color: rgb(185,206,158);
+    background-color: rgb(74,122,147);
+}
+
+#menuContact:hover {
+    color: rgb(74,122,147);
+    background-color: rgb(185,206,158);
+}

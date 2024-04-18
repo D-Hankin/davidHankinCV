@@ -1,0 +1,14 @@
+#getReposTable {
+    width: 100%;
+    text-align: center;
+    ;
+}
+
+.getReposTr {
+    font-size: Large;
+    border-bottom: 2px solid rgb(209,193,223);
+}
+
+.languageDiv {
+    width: 100%;
+}
