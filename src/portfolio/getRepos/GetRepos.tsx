@@ -102,7 +102,7 @@ function GetRepos() {
                             <td><a href={repo.html_url} target='_blank'>{repo.name}</a></td>
                             <td>
                                 {repoLanguages[repo.id.toString()] && Object.entries(repoLanguages[repo.id.toString()]).map(([language, percentage]) => (
-                                <div className='languageDiv' key={language}>{language}: {percentage}%</div>
+                                <div className='languageDiv' key={language}>{language}: {percentage}</div>
                         ))}
                             </td>
                             <td>{repo.description}</td>  
