@@ -1,4 +1,9 @@
 import "./interests.css"
+import hemma from "../images/hemma.png";
+import aventyr from "../images/aventyr.png";
+import film from "../images/film.png"; 
+import music from "../images/music.png";
+
 
 function Interests() {
   return (
@@ -11,10 +16,10 @@ function Interests() {
         och pratar och pratar och gör livet lyckligare för varje dag. Vi bor fortfarande i huset vid kusten och delar vår fritid mellan Otto, Ozzy och våra höns. Vi har inte 
         lyckats med planen att varva ner.</p>
         <div id="interestsImgsDiv">
-          <img className="interestsImgs" src="src\images\hemma.png" />
-          <img className="interestsImgs" src="src\images\aventyr.png" />
-          <img className="interestsImgs" src="src\images\film.png" />
-          <img className="interestsImgs" src="src\images\music.png" />
+          <img className="interestsImgs" src={ hemma }/>
+          <img className="interestsImgs" src={ aventyr } />
+          <img className="interestsImgs" src={ film } />
+          <img className="interestsImgs" src={ music } />
         </div>
     </div>
   )
