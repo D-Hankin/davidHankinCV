@@ -38,6 +38,7 @@ function GetRepos() {
     const getLanguages = async (languagesUrl: string) => {
         try {
             const response = await fetch(languagesUrl, {
+                method: "GET",
                 headers: {
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
@@ -87,8 +88,9 @@ function GetRepos() {
     }, [repos]);
 
     return (
+        <div id='getReposTableDiv'>
             <table id='getReposTable'>
-                <thead>
+                <thead id="getReposTableHead">
                     <tr>
                         <td>Name</td>
                         <td>Langauges</td>
@@ -97,20 +99,21 @@ function GetRepos() {
                 </thead>
                 <tbody>
                         {Object.values(trimmedAndSortedRepos).map((repo: Repo) => ( 
-                            <tr key={repo.id}>
+                            <tr className='getReposTr' key={repo.id}>
                             
-                            <td><a href={repo.html_url} target='_blank'>{repo.name}</a></td>
+                            <td><a className='repoName' href={repo.html_url} target='_blank'>{repo.name}</a></td>
                             <td>
                                 {repoLanguages[repo.id.toString()] && Object.entries(repoLanguages[repo.id.toString()]).map(([language, percentage]) => (
                                 <div className='languageDiv' key={language}>{language}: {percentage}</div>
                         ))}
                             </td>
-                            <td>{repo.description}</td>  
+                            <td className='description'>{repo.description}</td>  
                         
                         </tr>
                         ))}
                 </tbody>
             </table>
+        </div>
     );
 }
 
