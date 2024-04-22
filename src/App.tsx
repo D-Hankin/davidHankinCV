@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <h5>(Jag är skriven i Typescript/React. Kika i repot här: <a>Github</a>)</h5>
+      <h5>(Jag är skriven i Typescript/React. Kika i repot här: <a id="githubLink" href='https://github.com/D-Hankin/davidHankinCV'>Github</a>)</h5>
       <h1>David Hankin CV</h1>
       <div id='contentDiv'>
         <div id="leftDiv">

@@ -21,6 +21,7 @@ function GetRepos() {
         try {
             const response = await fetch(fetchAddress, {
                 headers: {
+                    "Authorization": "Bearer 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",
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
                 }
@@ -40,6 +41,7 @@ function GetRepos() {
             const response = await fetch(languagesUrl, {
                 method: "GET",
                 headers: {
+                    "Authorization": "Bearer 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",
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
                 }
@@ -73,10 +75,10 @@ function GetRepos() {
     }, []); 
 
     useEffect(() => {
-        console.log(repos);
         setTrimmedAndSortedRepos([...repos].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()));
-        console.log(trimmedAndSortedRepos);
-
+    }, [repos]);
+    
+    useEffect(() => {
         trimmedAndSortedRepos.forEach(async (repo) => {
             const languages = await getLanguages(repo.languages_url);
             const percentages = parseLanguages(languages);
@@ -85,7 +87,8 @@ function GetRepos() {
                 [repo.id.toString()]: percentages 
             }));
         });
-    }, [repos]);
+    }, [trimmedAndSortedRepos]);
+    
 
     return (
         <div id='getReposTableDiv'>
@@ -98,19 +101,17 @@ function GetRepos() {
                     </tr>
                 </thead>
                 <tbody>
-                        {Object.values(trimmedAndSortedRepos).map((repo: Repo) => ( 
-                            <tr className='getReposTr' key={repo.id}>
-                            
+                    {Object.values(trimmedAndSortedRepos).map((repo: Repo) => ( 
+                        <tr className='getReposTr' key={repo.id}>
                             <td><a className='repoName' href={repo.html_url} target='_blank'>{repo.name}</a></td>
                             <td>
                                 {repoLanguages[repo.id.toString()] && Object.entries(repoLanguages[repo.id.toString()]).map(([language, percentage]) => (
-                                <div className='languageDiv' key={language}>{language}: {percentage}</div>
-                        ))}
+                                    <div className='languageDiv' key={language}>{language}: {percentage}</div>
+                                ))}
                             </td>
                             <td className='description'>{repo.description}</td>  
-                        
                         </tr>
-                        ))}
+                    ))}
                 </tbody>
             </table>
         </div>

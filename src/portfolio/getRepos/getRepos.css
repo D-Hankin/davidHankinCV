@@ -1,10 +1,16 @@
 #getReposTable {
     width: 100%;
     text-align: center;
+    border-collapse: collapse;
+}
+
+#getReposTable td {
+    padding: 10px 0 10px 0;
 }
 
 .getReposTr {
-    border-bottom: 2px solid rgb(209,193,223);
+    border-bottom: 2px solid rgb(50,132,91);
+    padding: 20px 0 20px 0;
 }
 
 .languageDiv {
@@ -14,15 +20,19 @@
 
 .description {
     font-size: medium;
+    width: 60%;
 }
 
 #getReposTableHead {
-    border-bottom: 2px solid rgb(209,193,223);
+    border-bottom: 4px solid rgb(50,132,91);
+    margin-bottom: 3%;
+    font-size: 120%;
+
 }
 
 .repoName {
     font-size: 100%;
-    color: rgb(209,193,223);
+    color: rgb(50,132,91);
 }
 
 #getReposTableDiv {
@@ -37,4 +47,6 @@
     border-radius: 10px;
     background-color: rgb(209,193,223);
     color: rgb(50,132,91);
+    border: 2px solid rgb(50,132,91);
 }
+
