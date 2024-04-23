@@ -7,13 +7,13 @@ function Home() {
       <div id="contentHome">
         <div id="contentLeft">
           <h2>Motivering...</h2>  
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Nulla vitae magna eu nulla cursus rutrum. Integer eget nisi velit. 
-              Cras mattis sapien nec ipsum molestie, non convallis dui lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Nulla vitae magna eu nulla cursus rutrum. Integer eget nisi velit. 
-              Cras mattis sapien nec ipsum molestie, non convallis dui lacinia.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Nulla vitae magna eu nulla cursus rutrum. Integer eget nisi velit. 
-              Cras mattis sapien nec ipsum molestie, non convallis dui lacinia.</p>
+          <p> Med över ett decennium av yrkeserfarenhet för jag med mig en gedigen kompetens och en bevisad förmåga att anpassa mig och lyckas i olika miljöer. Genom hela min 
+              karriär har jag visat starkt ledarskap, problemlösningsförmåga och god kommunikationsförmåga, och konsekvent drivit projekt till framgång.<br/><br/>Under de 
+              senaste två åren har jag varit med i en intensiv tvåårig kurs inom Java-utveckling med tydligt fokus på fullstackutveckling för att anpassa mig till 
+              aktuella branschtrender. Denna kurs erbjöd omfattande utbildning och praktisk erfarenhet inom både Java-programmering och fullstackutveckling, vilket har rustat mig 
+              med de färdigheter och den kunskap som krävs för att lyckas i dagens dynamiska programmeringslandskap.<br/><br/>Som en mycket motiverad och anpassningsbar individ 
+              trivs jag i dynamiska miljöer och njuter av att samarbeta, både inom ett team och i samband med andra teams, för att uppnå gemensamma mål. Jag ser med spänning fram 
+              emot möjligheten att utnyttja mina färdigheter och bidra till innovativa projekt inom vilken programmeringsmiljö som helst.</p>
           <h3>Mina styrkor...</h3>
           <ul id="strengthsList">
             <li>Problemlösning - att kunna titta på både detaljer eller helheten och hitta vägen till bästa resultat.</li>

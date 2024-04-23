@@ -23,7 +23,13 @@
   margin: 1%;
 }
 
+#githubLink {
+  color: white;
+}
 
+#githubLink:hover {
+  color: #646cff;
+}
 
 
 

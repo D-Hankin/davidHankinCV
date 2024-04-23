@@ -3,9 +3,11 @@ import "./portfolio.css"
 
 function Portfolio() {
   return (
-    <div id="contentPortfolio">
-        <h2>Nuvarande publika GitHub-repos</h2>
-        <GetRepos />
+    <div id="contentPortfolioOuter">
+      <div id="contentPortfolio">
+          <h2>Nuvarande publika GitHub-repos</h2>
+      </div>
+          <GetRepos />
     </div>
   )
 }
