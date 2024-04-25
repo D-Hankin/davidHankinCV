@@ -10,85 +10,57 @@ interface Repo {
     languages_url: string
 }
 
-function GetRepos() {
-    const [repos, setRepos] = useState<Repo[]>([]);
-    const [trimmedAndSortedRepos, setTrimmedAndSortedRepos] = useState<Repo[]>([]);
-    const [repoLanguages, setRepoLanguages] = useState<{ [key: string]: { [key: string]: string } }>({});
+interface Props {
+    repos: Repo[];
+}
 
-    const fetchAddress: string = "https://api.github.com/users/D-Hankin/repos";    
-    
-    const updateRepos = async () => {
-        try {
-            const response = await fetch(fetchAddress, {
-                headers: {
-                    // "Authorization": "Bearer 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",
-                    "User-Agent": "D-Hankin",
-                    "Accept": "application/vnd.github+json"
+function GetRepos({ repos }: Props) {
+    const [repoLanguages, setRepoLanguages] = useState<{ [key: string]: { [key: string]: string | null } }>({});
+
+    useEffect(() => {
+        const fetchLanguages = async () => {
+            const languagesData: { [key: string]: { [key: string]: string | null } } = {};
+
+            for (const repo of repos) {
+                try {
+                    const response = await fetch(repo.languages_url, {
+                        method: "GET",
+                        headers: {
+                            "Authorization": "Bearer ${{ secrets.APITOKEN }}",
+                            "User-Agent": "D-Hankin",
+                            "Accept": "application/vnd.github+json"
+                        }
+                    });
+                    if (!response.ok) {
+                        throw new Error("Bad network response.");
+                    }
+                    const data = await response.json();
+                    const percentages = parseLanguages(data);
+                    languagesData[repo.id.toString()] = percentages;
+                } catch (error) {
+                    console.error(`Error fetching languages for ${repo.name}:`, error);
+                    languagesData[repo.id.toString()] = { error: 'Error fetching languages' };
                 }
-            });
-            if (!response.ok) {
-                throw new Error("Bad network response.");
             }
-            const data : Repo[] = await response.json();
-            setRepos(data);
-        } catch (error) {
-            console.error('There was a problem fetching the repos:', error);
-        }
-    };
 
-    const getLanguages = async (languagesUrl: string) => {
-        try {
-            const response = await fetch(languagesUrl, {
-                method: "GET",
-                headers: {
-                    // "Authorization": "Bearer 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",
-                    "User-Agent": "D-Hankin",
-                    "Accept": "application/vnd.github+json"
-                }
-            });
-            if (!response.ok) {
-                throw new Error("Bad network response.");
-            }
-            const data = await response.json();
-            return JSON.stringify(data);
-        } catch (error) {
-            console.error('There was a problem fetching the languages:', error);
-            return ''; 
-        }
-    };
+            setRepoLanguages(languagesData);
+        };
 
-    const parseLanguages = (languages: string): { [key: string]: string } => {
-        const parsedLanguages: { [ key: string ]: number} = JSON.parse(languages);
-        const totalLines: number = Object.values(parsedLanguages).reduce((sum, value) => sum + value, 0);
-        const percentages: { [key: string]: string } = {};
-    
-        for (const [language, lines] of Object.entries(parsedLanguages)) {
+        if (repos.length > 0) {
+            fetchLanguages();
+        }
+    }, [repos]);
+
+    const parseLanguages = (languages: { [key: string]: number }): { [key: string]: string | null } => {
+        const totalLines: number = Object.values(languages).reduce((sum, value) => sum + value, 0);
+        const percentages: { [key: string]: string | null } = {};
+
+        for (const [language, lines] of Object.entries(languages)) {
             percentages[language] = ((lines / totalLines) * 100).toFixed(2) + '%';
         }
-    
+
         return percentages;
     };
-    
-
-    useEffect(() => {
-        updateRepos();
-    }, []); 
-
-    useEffect(() => {
-        setTrimmedAndSortedRepos([...repos].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()));
-    }, [repos]);
-    
-    useEffect(() => {
-        trimmedAndSortedRepos.forEach(async (repo) => {
-            const languages = await getLanguages(repo.languages_url);
-            const percentages = parseLanguages(languages);
-            setRepoLanguages(prevState => ({
-                ...prevState,
-                [repo.id.toString()]: percentages 
-            }));
-        });
-    }, [trimmedAndSortedRepos]);
-    
 
     return (
         <div id='getReposTableDiv'>
@@ -101,15 +73,21 @@ function GetRepos() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.values(trimmedAndSortedRepos).map((repo: Repo) => ( 
+                    {Object.values(repos).map((repo: Repo) => (
                         <tr className='getReposTr' key={repo.id}>
                             <td><a className='repoName' href={repo.html_url} target='_blank'>{repo.name}</a></td>
                             <td>
-                                {repoLanguages[repo.id.toString()] && Object.entries(repoLanguages[repo.id.toString()]).map(([language, percentage]) => (
-                                    <div className='languageDiv' key={language}>{language}: {percentage}</div>
-                                ))}
+                                {repoLanguages[repo.id.toString()] &&
+                                    (repoLanguages[repo.id.toString()].error ? (
+                                        <div className='languageDiv'>{repoLanguages[repo.id.toString()].error}</div>
+                                    ) : (
+                                        Object.entries(repoLanguages[repo.id.toString()]).map(([language, percentage]) => (
+                                            <div className='languageDiv' key={language}>{language}: {percentage}</div>
+                                        ))
+                                    ))
+                                }
                             </td>
-                            <td className='description'>{repo.description}</td>  
+                            <td className='description'>{repo.description}</td>
                         </tr>
                     ))}
                 </tbody>
