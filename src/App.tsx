@@ -9,7 +9,7 @@ import Portfolio from './portfolio/Portfolio';
 
 function App() {
 
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState("home");
   
   useEffect(() => {
   
