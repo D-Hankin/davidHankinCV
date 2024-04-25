@@ -28,7 +28,7 @@ function App() {
         try {
             const response = await fetch(fetchAddress, {
                 headers: {
-                    "Authorization": "Bearer ${{ secrets.APITOKEN }}",
+                    // "Authorization": "Bearer ${{ secrets.APITOKEN }}",
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
                 }
