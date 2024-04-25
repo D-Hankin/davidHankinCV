@@ -21,7 +21,7 @@ function GetRepos() {
         try {
             const response = await fetch(fetchAddress, {
                 headers: {
-                    "Authorization": "Bearer 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",
+                    // "Authorization": "Bearer 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",
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
                 }
@@ -41,7 +41,7 @@ function GetRepos() {
             const response = await fetch(languagesUrl, {
                 method: "GET",
                 headers: {
-                    "Authorization": "Bearer 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",
+                    // "Authorization": "Bearer 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",
                     "User-Agent": "D-Hankin",
                     "Accept": "application/vnd.github+json"
                 }
