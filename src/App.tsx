@@ -29,7 +29,8 @@ function App() {
             const response = await fetch(fetchAddress, {
                 headers: {
                     "User-Agent": "D-Hankin",
-                    "Accept": "application/vnd.github+json"
+                    "Accept": "application/vnd.github+json",
+                    "Content-Type": "application/json"
                 }
             });
             if (!response.ok) {

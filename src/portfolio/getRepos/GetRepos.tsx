@@ -27,7 +27,8 @@ function GetRepos({ repos }: Props) {
                         method: "GET",
                         headers: {
                             "User-Agent": "D-Hankin",
-                            "Accept": "application/vnd.github+json"
+                            "Accept": "application/vnd.github+json",
+                            "Content-Type": "application/json"
                         }
                     });
                     if (!response.ok) {
