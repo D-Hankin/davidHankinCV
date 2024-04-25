@@ -18,8 +18,8 @@ interface Repo {
 
 function App() {
 
-  const [page, setPage] = useState("home");
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [page, setPage] = useState("home");
   const [trimmedAndSortedRepos, setTrimmedAndSortedRepos] = useState<Repo[]>([]);
 
   const fetchAddress: string = "https://api.github.com/users/D-Hankin/repos";    
