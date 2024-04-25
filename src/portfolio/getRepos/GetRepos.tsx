@@ -26,7 +26,6 @@ function GetRepos({ repos }: Props) {
                     const response = await fetch(repo.languages_url, {
                         method: "GET",
                         headers: {
-                            // "Authorization": "Bearer ${{ secrets.APITOKEN }}",
                             "User-Agent": "D-Hankin",
                             "Accept": "application/vnd.github+json"
                         }
