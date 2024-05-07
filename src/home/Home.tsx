@@ -7,13 +7,13 @@ function Home() {
       <div id="contentHome">
         <div id="contentLeft">
           <h2>Motivering...</h2>  
-          <p> Med över ett decennium av yrkeserfarenhet för jag med mig en gedigen kompetens och en bevisad förmåga att anpassa mig och lyckas i olika miljöer. Genom hela min 
-              karriär har jag visat starkt ledarskap, problemlösningsförmåga och god kommunikationsförmåga, och konsekvent drivit projekt till framgång.<br/><br/>Under de 
-              senaste två åren har jag varit med i en intensiv tvåårig kurs inom Java-utveckling med tydligt fokus på fullstackutveckling för att anpassa mig till 
-              aktuella branschtrender. Denna kurs erbjöd omfattande utbildning och praktisk erfarenhet inom både Java-programmering och fullstackutveckling, vilket har rustat mig 
-              med de färdigheter och den kunskap som krävs för att lyckas i dagens dynamiska programmeringslandskap.<br/><br/>Som en mycket motiverad och anpassningsbar individ 
-              trivs jag i dynamiska miljöer och njuter av att samarbeta, både inom ett team och i samband med andra teams, för att uppnå gemensamma mål. Jag ser med spänning fram 
-              emot möjligheten att utnyttja mina färdigheter och bidra till innovativa projekt inom vilken programmeringsmiljö som helst.</p>
+          <p> Med över ett decennium av yrkeserfarenhet har jag utvecklat en gedigen kompetens och en bevisad förmåga att anpassa mig och lyckas i olika miljöer. Genom hela 
+              min karriär har jag visat ett starkt ledarskap, god problemlösning- och kommunikationsförmåga och därmed konsekvent drivit projekt till framgång.<br/><br/>
+              Under de senaste två åren har jag gått en intensiv utbildning inom Java-utveckling med tydligt fokus på fullstackutveckling för att anpassa mig till aktuella 
+              branschtrender. Denna utbildning har varit omfattande och med praktisk erfarenhet inom både Java-programmering och fullstackutveckling, vilket har rustat mig 
+              med de färdigheter och den kunskap som krävs för att lyckas i dagens dynamiska programmeringslandskap.<br/><br/>Som en mycket motiverad och anpassningsbar 
+              individ trivs jag i dynamiska miljöer och av att samarbeta, både inom ett team och tillsammans med andra team, detta för att uppnå det gemensamma mål. Jag ser 
+              med spänning fram emot möjligheten att utnyttja mina färdigheter och bidra till innovativa projekt inom programmeringsmiljön.</p>
           <h3>Mina styrkor...</h3>
           <ul id="strengthsList">
             <li>Problemlösning - att kunna titta på både detaljer eller helheten och hitta vägen till bästa resultat.</li>
