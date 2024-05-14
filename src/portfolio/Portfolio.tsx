@@ -11,7 +11,8 @@ interface Repo {
 }
 
 interface Props {
-  repos: Repo[];
+  repos: Repo[],
+  repoLanguages: { [key: string]: { [key: string]: string | null } }
 }
 
 function Portfolio(props: Props) {
@@ -20,7 +21,7 @@ function Portfolio(props: Props) {
       <div id="contentPortfolio">
           <h2>Nuvarande publika GitHub-repos</h2>
       </div>
-          <GetRepos repos={props.repos}/>
+          <GetRepos repos={props.repos} repoLanguages={props.repoLanguages}/>
     </div>
   )
 }
