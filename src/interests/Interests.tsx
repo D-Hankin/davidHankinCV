@@ -2,7 +2,7 @@ import "./interests.css"
 import hemma from "../images/hemma.png";
 import aventyr from "../images/aventyr.png";
 import film from "../images/film.png"; 
-import music from "../images/music.png";
+import musik from "../images/musik.png";
 
 
 function Interests() {
@@ -19,7 +19,7 @@ function Interests() {
           <img className="interestsImgs" src={ hemma }/>
           <img className="interestsImgs" src={ aventyr } />
           <img className="interestsImgs" src={ film } />
-          <img className="interestsImgs" src={ music } />
+          <img className="interestsImgs" src={ musik } />
         </div>
     </div>
   )
