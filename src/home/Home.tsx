@@ -16,11 +16,11 @@ function Home() {
               med spänning fram emot möjligheten att utnyttja mina färdigheter och bidra till innovativa projekt inom programmeringsmiljön.</p>
           <h3>Mina styrkor...</h3>
           <ul id="strengthsList">
-            <li>Problemlösning - att kunna titta på både detaljer eller helheten och hitta vägen till bästa resultat.</li>
-            <li>Anpassning till olika roller - kan leda en grupp där det behövs men redo att låta andra leda där det är bäst för projektet.</li>
-            <li>Arbetsmoral - oavsett uppgift är jag alltid beredd att slutföra den efter bästa förmåga.</li>
-            <li>Kreativ - att designa och utveckla mina egna idéer är oerhört givande.</li>
-            <li>Kommunication - Förmågan att inte bara tydligt kommunicera mina idéer eller feedback till andra utan också ta till sig information från andra.</li>
+            <li>Problemlösning - att på ett kreativt och effektivt sätt hantera problem för att nå bästa resultat.</li>
+            <li>Anpassning till olika roller - att kunna leda och fördela arbete i en grupp vid behov samt att följa andras ledarskap för att uppnå bästa resultat i projektet.</li>
+            <li>Arbetsmoral - oavsett uppgift är jag alltid beredd att ta ansvar för att slutföra den för att uppnå bästa resultat..</li>
+            <li>Kreativ - att kunna designa och utveckla mina egna idéer är oerhört givande.</li>
+            <li>Kommunikation - förmågan att inte bara tydligt kommunicera mina idéer eller feedback till andra utan även att ta till sig information från andra.</li>
           </ul>
         </div>
         <div id="imageDiv">
